@@ -12,15 +12,15 @@ def process_image(image_file):
     
     full_response = ''
 
-    for response in generate(model='llava',
-                             prompt='What device what the picture taken on? look into the metadata of the bytes for information',
+    for response in generate(model='image_tool',
+                             prompt='describe the image',
                              images=[image_bytes],
                              stream=True):
         print(response['response'], end='', flush=True)
         full_response += response['response']
 
 
-process_image('./IMG_7746.jpeg')
+process_image('./img.jpeg')
 
 # stream = ollama.chat(
 #     model='llama2',

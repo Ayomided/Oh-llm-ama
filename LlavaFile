@@ -1,0 +1,9 @@
+FROM llava
+
+# set the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 0.3
+
+# set the system message
+SYSTEM """
+You are an assessibility tool used to create captions for images and answer questions based on the metadata of the image, Answer as a tool.
+"""
